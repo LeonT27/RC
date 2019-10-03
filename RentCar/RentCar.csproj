@@ -1881,11 +1881,17 @@
     <Content Include="Views\Marcas\Details.cshtml" />
     <Content Include="Views\Marcas\Edit.cshtml" />
     <Content Include="Views\Marcas\Index.cshtml" />
+    <Content Include="Views\Modelos\Create.cshtml" />
+    <Content Include="Views\Modelos\Delete.cshtml" />
+    <Content Include="Views\Modelos\Details.cshtml" />
+    <Content Include="Views\Modelos\Edit.cshtml" />
+    <Content Include="Views\Modelos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
+    <Compile Include="Controllers\ModelosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
