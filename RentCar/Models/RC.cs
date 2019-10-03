@@ -33,6 +33,10 @@ namespace RentCar.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Cliente>()
+                .Property(e => e.NoTarjeta)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Cliente>()
                 .Property(e => e.LimiteCredito)
                 .HasPrecision(19, 4);
 

@@ -24,8 +24,8 @@ namespace RentCar.Models
         [StringLength(13)]
         public string Cedula { get; set; }
 
-        [MaxLength(20)]
-        public byte[] NoTarjeta { get; set; }
+        [StringLength(20)]
+        public string NoTarjeta { get; set; }
 
         [Column(TypeName = "money")]
         public decimal? LimiteCredito { get; set; }
