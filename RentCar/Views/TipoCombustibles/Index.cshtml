@@ -1,7 +1,7 @@
-﻿@model IEnumerable<RentCar.Models.TipoVehiculo>
+﻿@model IEnumerable<RentCar.Models.TipoCombustible>
 
 @{
-    ViewBag.Title = "Tipo de Vehiculos";
+    ViewBag.Title = "Tipo de Combustibles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,7 +14,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered dataTable" id="tipoVehiculoTable">
+            <table class="table table-bordered dataTable" id="tipoCombustibleTable">
                 <thead>
                     <tr>
                         <th>
@@ -58,7 +58,7 @@
     <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#tipoVehiculoTable').DataTable({
+            $('#tipoCombustibleTable').DataTable({
                 "order": [[1, "asc"]]
             });
         });

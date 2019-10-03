@@ -36,7 +36,7 @@
                                 @Html.DisplayFor(modelItem => item.Descripcion)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Estado)
+                                @((bool)item.Estado?"Activo":"Inacctivo")
                             </td>
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
@@ -60,7 +60,9 @@
     <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#marcaTable').DataTable();
+            $('#marcaTable').DataTable({
+                "order": [[1, "asc"]]
+            });
         });
     </script>
 }

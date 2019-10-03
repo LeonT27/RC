@@ -1,7 +1,7 @@
-﻿@model IEnumerable<RentCar.Models.Modelo>
+﻿@model IEnumerable<RentCar.Models.Vehiculo>
 
 @{
-    ViewBag.Title = "Modelos";
+    ViewBag.Title = "Vehiculos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,14 +14,32 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered dataTable" id="modeloTable">
+            <table class="table table-bordered dataTable" id="vehiculoTable">
                 <thead>
                     <tr>
                         <th>
                             @Html.DisplayNameFor(model => model.Marca.Descripcion)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.Modelo.Descripcion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TipoCombustible.Descripcion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TipoVehiculo.Descripcion)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.Descripcion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NoChasis)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NoMotor)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NoPlaca)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Estado)
@@ -37,7 +55,25 @@
                                 @Html.DisplayFor(modelItem => item.Marca.Descripcion)
                             </td>
                             <td>
+                                @Html.DisplayFor(modelItem => item.Modelo.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoCombustible.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoVehiculo.Descripcion)
+                            </td>
+                            <td>
                                 @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NoChasis)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NoMotor)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NoPlaca)
                             </td>
                             <td>
                                 @((bool)item.Estado ? "Activo" : "Inacctivo")
@@ -64,8 +100,8 @@
     <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#modeloTable').DataTable({
-                "order": [[2, "asc"]]
+            $('#vehiculoTable').DataTable({
+                "order": [[8, "asc"]]
             });
         });
     </script>

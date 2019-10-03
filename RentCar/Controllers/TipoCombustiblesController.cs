@@ -10,112 +10,107 @@ using RentCar.Models;
 
 namespace RentCar.Controllers
 {
-    public class ModelosController : Controller
+    public class TipoCombustiblesController : Controller
     {
         private RC db = new RC();
 
-        // GET: Modelos
+        // GET: TipoCombustibles
         public ActionResult Index()
         {
-            var modelo = db.Modelo.Include(m => m.Marca);
-            return View(modelo.ToList());
+            return View(db.TipoCombustible.ToList());
         }
 
-        // GET: Modelos/Details/5
+        // GET: TipoCombustibles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Modelo modelo = db.Modelo.Find(id);
-            if (modelo == null)
+            TipoCombustible tipoCombustible = db.TipoCombustible.Find(id);
+            if (tipoCombustible == null)
             {
                 return HttpNotFound();
             }
-            return View(modelo);
+            return View(tipoCombustible);
         }
 
-        // GET: Modelos/Create
+        // GET: TipoCombustibles/Create
         public ActionResult Create()
         {
-            ViewBag.IdMarca = new SelectList(db.Marca.Where(m => m.Estado == true), "Id", "Descripcion");
             return View();
         }
 
-        // POST: Modelos/Create
+        // POST: TipoCombustibles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IdMarca,Descripcion,Estado")] Modelo modelo)
+        public ActionResult Create([Bind(Include = "Id,Descripcion,Estado")] TipoCombustible tipoCombustible)
         {
             if (ModelState.IsValid)
             {
-                db.Modelo.Add(modelo);
+                db.TipoCombustible.Add(tipoCombustible);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdMarca = new SelectList(db.Marca, "Id", "Descripcion", modelo.IdMarca);
-            return View(modelo);
+            return View(tipoCombustible);
         }
 
-        // GET: Modelos/Edit/5
+        // GET: TipoCombustibles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Modelo modelo = db.Modelo.Find(id);
-            if (modelo == null)
+            TipoCombustible tipoCombustible = db.TipoCombustible.Find(id);
+            if (tipoCombustible == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IdMarca = new SelectList(db.Marca, "Id", "Descripcion", modelo.IdMarca);
-            return View(modelo);
+            return View(tipoCombustible);
         }
 
-        // POST: Modelos/Edit/5
+        // POST: TipoCombustibles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IdMarca,Descripcion,Estado")] Modelo modelo)
+        public ActionResult Edit([Bind(Include = "Id,Descripcion,Estado")] TipoCombustible tipoCombustible)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(modelo).State = EntityState.Modified;
+                db.Entry(tipoCombustible).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdMarca = new SelectList(db.Marca, "Id", "Descripcion", modelo.IdMarca);
-            return View(modelo);
+            return View(tipoCombustible);
         }
 
-        // GET: Modelos/Delete/5
+        // GET: TipoCombustibles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Modelo modelo = db.Modelo.Find(id);
-            if (modelo == null)
+            TipoCombustible tipoCombustible = db.TipoCombustible.Find(id);
+            if (tipoCombustible == null)
             {
                 return HttpNotFound();
             }
-            return View(modelo);
+            return View(tipoCombustible);
         }
 
-        // POST: Modelos/Delete/5
+        // POST: TipoCombustibles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Modelo modelo = db.Modelo.Find(id);
-            db.Modelo.Remove(modelo);
+            TipoCombustible tipoCombustible = db.TipoCombustible.Find(id);
+            db.TipoCombustible.Remove(tipoCombustible);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

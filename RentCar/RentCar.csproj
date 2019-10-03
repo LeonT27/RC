@@ -1891,13 +1891,25 @@
     <Content Include="Views\TipoVehiculos\Details.cshtml" />
     <Content Include="Views\TipoVehiculos\Edit.cshtml" />
     <Content Include="Views\TipoVehiculos\Index.cshtml" />
+    <Content Include="Views\TipoCombustibles\Create.cshtml" />
+    <Content Include="Views\TipoCombustibles\Delete.cshtml" />
+    <Content Include="Views\TipoCombustibles\Details.cshtml" />
+    <Content Include="Views\TipoCombustibles\Edit.cshtml" />
+    <Content Include="Views\TipoCombustibles\Index.cshtml" />
+    <Content Include="Views\Vehiculos\Create.cshtml" />
+    <Content Include="Views\Vehiculos\Delete.cshtml" />
+    <Content Include="Views\Vehiculos\Details.cshtml" />
+    <Content Include="Views\Vehiculos\Edit.cshtml" />
+    <Content Include="Views\Vehiculos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\ModelosController.cs" />
+    <Compile Include="Controllers\TipoCombustiblesController.cs" />
     <Compile Include="Controllers\TipoVehiculosController.cs" />
+    <Compile Include="Controllers\VehiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
