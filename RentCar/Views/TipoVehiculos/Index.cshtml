@@ -1,7 +1,7 @@
-﻿@model IEnumerable<RentCar.Models.Modelo>
+﻿@model IEnumerable<RentCar.Models.TipoVehiculo>
 
 @{
-    ViewBag.Title = "Modelos";
+    ViewBag.Title = "Tipo de Vehiculos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,12 +14,9 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered dataTable" id="modeloTable">
+            <table class="table table-bordered dataTable" id="tipoVehiculoTable">
                 <thead>
                     <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Marca.Descripcion)
-                        </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Descripcion)
                         </th>
@@ -33,9 +30,6 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Marca.Descripcion)
-                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Descripcion)
                             </td>
@@ -64,7 +58,7 @@
     <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#modeloTable').DataTable();
+            $('#tipoVehiculoTable').DataTable();
         });
     </script>
 }
